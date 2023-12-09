@@ -32,9 +32,15 @@ function Calcular() {
                 alert(`o resultado da multiplicação é: ${resultado}`)
             break;
         case 'Dividir':
-                resultado = n1 / n2
-
-                alert(`o resultado da divisão é: ${resultado}`)
+                
+                if (n1 === 0 || n2 === 0) {
+                    alert(`não da para dividir por ${0}`)
+                    document.getElementById('resultado').innerHTML = `não da para dividir por ${0}`
+                } else {
+                    resultado = n1 / n2
+                    alert(`o resultado da divisão é: ${resultado}`)
+                }
+                
             break;
     
         default:
@@ -43,7 +49,10 @@ function Calcular() {
     }
 
     //
-    document.getElementById('resultado').innerHTML = resultado
+    if (resultado !== undefined) {
+        document.getElementById('resultado').innerHTML = resultado
+    }
+    
 }
 
 
